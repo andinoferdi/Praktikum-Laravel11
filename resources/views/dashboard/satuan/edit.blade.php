@@ -13,7 +13,7 @@
                               <div class="form-group">
                                   <label for="nama_satuan">Nama Satuan:</label>
                                   <input type="text" class="form-control" id="nama_satuan" name="nama_satuan"
-                                      value="{{ $satuan->nama_satuan }}">
+                                      autocomplete="off" value="{{ $satuan->nama_satuan }}">
                               </div>
                               <button type="submit" class="btn btn-primary mt-3">Update</button>
                           </form>

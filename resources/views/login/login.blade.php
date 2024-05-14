@@ -37,7 +37,8 @@
                                 @csrf
                                 <div class="form-group first">
                                     <label for="username">email</label>
-                                    <input type="email" class="form-control" id="email" name="email">
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        autocomplete="off">
 
                                 </div>
                                 <div class="form-group last mb-4">

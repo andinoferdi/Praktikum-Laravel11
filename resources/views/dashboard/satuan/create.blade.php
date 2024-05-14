@@ -10,7 +10,8 @@
                               @csrf
                               <div class="form-group">
                                   <label for="nama_satuan">Nama Satuan:</label>
-                                  <input type="text" class="form-control" id="nama_satuan" name="nama_satuan">
+                                  <input type="text" class="form-control" id="nama_satuan" name="nama_satuan"
+                                      autocomplete="off">
                               </div>
                               <button type="submit" class="btn btn-primary mt-3">Submit</button>
                           </form>

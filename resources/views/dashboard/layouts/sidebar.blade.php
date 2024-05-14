@@ -45,7 +45,7 @@
                        </g>
                    </svg>
                </span>
-               <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span>
+               <span class="app-brand-text demo menu-text fw-bolder ms-2">Dashboard</span>
            </a>
 
            <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -56,14 +56,16 @@
        <div class="menu-inner-shadow"></div>
 
        <ul class="menu-inner py-1">
-           <li class="menu-item active">
+           <li class="menu-item {{ Request::is('dashboard') ? 'active' : '' }}">
                <a href="/dashboard" class="menu-link">
                    <i class="menu-icon tf-icons bx bx-home-circle"></i>
                    <div data-i18n="Analytics">Dashboard</div>
                </a>
            </li>
 
-           <li class="menu-item">
+           <li
+               class="menu-item {{ Request::is('dashboard/satuan') || Request::is('dashboard/satuan/create') || Request::is('dashboard/satuan/{satuan}/edit') ? 'active' : '' }}">
+
                <a href="javascript:void(0);" class="menu-link menu-toggle">
                    <i class="menu-icon tf-icons bx bx-layout"></i>
                    <div data-i18n="Layouts">CRUD</div>

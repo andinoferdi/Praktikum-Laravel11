@@ -41,7 +41,7 @@
                             <form action="#" method="post">
                                 <div class="form-group first">
                                     <label for="username">Username</label>
-                                    <input type="text" class="form-control" id="username">
+                                    <input type="text" class="form-control" id="username" autocomplete="off">
 
                                 </div>
                                 <div class="form-group last mb-4">
