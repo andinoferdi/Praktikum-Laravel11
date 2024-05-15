@@ -3,10 +3,19 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SatuanController;
+use App\Http\Controllers\CustomAuthController;
 use Illuminate\Support\Facades\Route;
 
+
+Route::get('/login', [CustomAuthController::class, 'indexlogin'])->name('login');
+Route::post('/login', [CustomAuthController::class, 'login']);
+
+Route::post('/register', [CustomAuthController::class, 'register']);
+Route::get('/verify', [CustomAuthController::class, 'verify'])->name('verify');
+
+Route::post('/logout', [CustomAuthController::class, 'logout'])->name('logout');
 Route::get('/', function () {
-    return view('welcome');
+    return view('userpage.index');
 });
 
 Route::get('/dashboard', [DashboardController::class, 'index'])
@@ -31,4 +40,8 @@ Route::delete('/dashboard/satuan/{satuan}', [SatuanController::class, 'destroy']
     ->middleware(['auth', 'verified', 'admin'])
     ->name('satuan.destroy');
 
-require __DIR__.'/auth.php';
+
+// require __DIR__.'/auth.php';
+
+
+

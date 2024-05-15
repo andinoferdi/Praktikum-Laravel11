@@ -1,87 +1,62 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="register/fonts/icomoon/style.css">
-    <link rel="stylesheet" href="register/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="register/css/bootstrap.min.css">
-
-    <link rel="stylesheet" href="register/css/style.css">
-
-    <title>Login #7</title>
+    <title>Login</title>
+    <link href="{{ asset('assets2/css/login.css') }}" rel="stylesheet">
 </head>
 
 <body>
-
-
-
-    <div class="content">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="register/images/undraw_remotely_2j6y.svg" alt="Image" class="img-fluid">
+    <h2>Login & Register Page</h2>
+    <div class="container" id="container">
+        <div class="form-container sign-in-container">
+            <form action="/login" method="post">
+                @csrf
+                <h1>Log In</h1>
+                <input type="email" placeholder="Email" name="email" id="email" autocomplete="off" />
+                <input type="password" placeholder="Password" name="password" id="password" />
+                <a href="#">Lupa Password</a>
+                <button type="submit" value="login">Log In</button>
+            </form>
+        </div>
+        <div class="form-container sign-up-container">
+            <form action="/register" method="post">
+                @csrf
+                <h1>Buat Akun</h1>
+                <input type="text" placeholder="Name" name="name" id="name" autocomplete="off" />
+                <input type="email" placeholder="Email" name="email" id="password" autocomplete="off" />
+                <input type="password" placeholder="Password" name="password" />
+                <input type="password" placeholder="Konfirmasi Password" name="password_confirmation"
+                    id="password_confirmation" />
+                <button>Register</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Selamat datang</h1>
+                    <p>Jika anda sudah membuat akun bisa memencet tombol dibawah ini</p>
+                    <button class="ghost" id="signIn">Log In</button>
                 </div>
-                <div class="col-md-6 contents">
-                    <div class="row justify-content-center">
-                        <div class="col-md-8">
-                            <div class="mb-4">
-                                <h3>Sign In</h3>
-                                <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur
-                                    adipisicing.</p>
-                            </div>
-                            <form action="/login" method="POST">
-                                @csrf
-                                <div class="form-group first">
-                                    <label for="username">email</label>
-                                    <input type="email" class="form-control" id="email" name="email"
-                                        autocomplete="off">
-
-                                </div>
-                                <div class="form-group last mb-4">
-                                    <label for="password">Password</label>
-                                    <input type="password" class="form-control" id="password" name="password">
-
-                                </div>
-
-                                <div class="d-flex mb-5 align-items-center">
-                                    <label class="control control--checkbox mb-0"><span class="caption">Remember
-                                            me</span>
-                                        <input type="checkbox" checked="checked" />
-                                        <div class="control__indicator"></div>
-                                    </label>
-                                    <span class="ml-auto"><a href="#" class="forgot-pass">Forgot
-                                            Password</a></span>
-                                </div>
-                                <input type="submit" value="Log In" class="btn btn-block btn-primary">
-                                <span class="d-block text-left my-4 text-muted">&mdash; or login with &mdash;</span>
-                                <div class="social-login">
-                                    <a href="#" class="facebook">
-                                        <span class="icon-facebook mr-3"></span>
-                                    </a>
-                                    <a href="#" class="twitter">
-                                        <span class="icon-twitter mr-3"></span>
-                                    </a>
-                                    <a href="#" class="google">
-                                        <span class="icon-google mr-3"></span>
-                                    </a>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
+                <div class="overlay-panel overlay-right">
+                    <h1>Halo</h1>
+                    <p>Terimakasi sudah membuat akun , untuk yang belum membuat bisa memencet tomnbol dibawah ini</p>
+                    <button class="ghost" id="signUp">Register</button>
                 </div>
-
             </div>
         </div>
     </div>
-    <script src="register/js/jquery-3.3.1.min.js"></script>
-    <script src="register/js/popper.min.js"></script>
-    <script src="register/js/bootstrap.min.js"></script>
-    <script src="register/js/main.js"></script>
+
+    <footer>
+        <p>
+            Created with <i class="fa fa-heart"></i> by
+            <a target="_blank" href="https://florin-pop.com">Florin Pop</a>
+            - Read how I created this and how you can join the challenge
+            <a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>.
+        </p>
+    </footer>
+    <script src="{{ asset('assets2/js/login.js') }}"></script>
+
 </body>
 
 </html>
