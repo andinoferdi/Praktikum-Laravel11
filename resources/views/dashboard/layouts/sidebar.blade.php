@@ -64,11 +64,11 @@
            </li>
 
            <li
-               class="menu-item {{ Request::is('dashboard/satuan') || Request::is('dashboard/satuan/create') || Request::is('dashboard/satuan/{satuan}/edit') ? 'active' : '' }}">
+               class="menu-item {{ Request::is('dashboard/satuan') || Request::is('dashboard/satuan/create') || Request::is('dashboard/satuan/{satuan}/edit') || Request::is('dashboard/mahasiswa') || Request::is('dashboard/ruangan') || Request::is('dashboard/kecamatan') ? 'active' : '' }}">
 
                <a href="javascript:void(0);" class="menu-link menu-toggle">
                    <i class="menu-icon tf-icons bx bx-layout"></i>
-                   <div data-i18n="Layouts">CRUD</div>
+                   <div data-i18n="Layouts">Master</div>
                </a>
 
 
@@ -79,12 +79,17 @@
                        </a>
                    </li>
                    <li class="menu-item">
-                       <a href="layouts-without-navbar.html" class="menu-link">
-                           <div data-i18n="Without navbar">Barang</div>
+                       <a href="/dashboard/mahasiswa" class="menu-link">
+                           <div data-i18n="Without navbar">Mahasiswa</div>
                        </a>
                    </li>
                    <li class="menu-item">
-                       <a href="layouts-container.html" class="menu-link">
+                       <a href="/dashboard/ruangan" class="menu-link">
+                           <div data-i18n="Without navbar">ruangan</div>
+                       </a>
+                   </li>
+                   <li class="menu-item">
+                       <a href="/dashboard/kecamatan" class="menu-link">
                            <div data-i18n="Container">Kecamatan</div>
                        </a>
                    </li>

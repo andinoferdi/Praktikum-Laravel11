@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SatuanController;
+use App\Http\Controllers\KecamatanController;
+use App\Http\Controllers\SessionController;
 use App\Http\Controllers\CustomAuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,8 +42,22 @@ Route::delete('/dashboard/satuan/{satuan}', [SatuanController::class, 'destroy']
     ->middleware(['auth', 'verified', 'admin'])
     ->name('satuan.destroy');
 
+Route::get('/dashboard/kecamatan', [KecamatanController::class, 'index'])
+    ->middleware(['auth', 'verified', 'admin']);
 
-// require __DIR__.'/auth.php';
+    Route::get('/dashboard/mahasiswa', [SessionController::class, 'index_mahasiswa'])
+    ->middleware(['auth', 'verified', 'admin'])
+    ->name('mahasiswa');
+Route::post('/store_mahasiswa', [SessionController::class, 'store_mahasiswa']);
+Route::post('/update_mahasiswa/{id}', [SessionController::class, 'update_mahasiswa']);
+
+
+ Route::get('/dashboard/ruangan', [SessionController::class, 'index_ruangan'])
+    ->middleware(['auth', 'verified', 'admin'])
+    ->name('ruangan');
+Route::post('/store_ruangan', [SessionController::class, 'store_ruangan']);
+
+
 
 
 

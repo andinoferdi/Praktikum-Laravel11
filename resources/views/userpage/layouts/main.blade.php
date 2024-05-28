@@ -49,6 +49,23 @@ https://templatemo.com/tm-589-lugx-gaming
     <script src="assets/js/owl-carousel.js"></script>
     <script src="assets/js/counter.js"></script>
     <script src="assets/js/custom.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $('#logout').click(function(e) {
+            e.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: '/logout',
+                data: {
+                    '_token': '{{ csrf_token() }}'
+                },
+                success: function(response) {
+                    // Redirect user to login page or wherever you want
+                    window.location.href = '/login';
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
